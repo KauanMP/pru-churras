@@ -69,4 +69,10 @@ export class Tab2Page {
   PlacarTime2 () {
     
   }
+
+  Clear () {
+    this.placarUm = 0;
+    this.placarDois = 0;
+    this.valendo = 0;
+  }
 }

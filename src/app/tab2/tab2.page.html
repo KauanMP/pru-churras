@@ -5,46 +5,62 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+  
+  <ion-content [fullscreen]="true">
 
-<ion-content [fullscreen]="true">
+  <ion-card class="grid-placar">
+    <ion-card-header> Placar</ion-card-header>
 
-  <ion-item>
-    <ion-label class="Placar">Valendo {{valendo}}</ion-label>
-  </ion-item>
-
-      <ion-item class="Numbers">
-        <ion-button (click)="MultiplicarUm()">1</ion-button>
-        <ion-button (click)="MultiplicarTres()">3</ion-button>
-        <ion-button (click)="MultiplicarSeis()">6</ion-button>
-        <ion-button (click)="MultiplicarNove()">9</ion-button>
-        <ion-button (click)="MultiplicarDoze()">12</ion-button>
-      </ion-item>
-
-  <ion-item color="warning">
-    <ion-col>
-      <ion-label>Time 1</ion-label>
-      <ion-row>
-        <button (click)="BotaoSomaTime1()" class="Button">+</button>
-        <ion-label>{{placarUm}}</ion-label>
-        <button (click)="BotaoSubtraiTime1()" class="Button">-</button>
-      </ion-row>
-    </ion-col>
-    <ion-col>
-      <ion-label>Time 2</ion-label>
-      <ion-row>
-        <button (click)="BotaoSomaTime2()" class="Button">+</button>
-        <ion-label>{{placarDois}}</ion-label>
-        <button (click)="BotaoSubtraiTime2()" class="Button">-</button>
-      </ion-row>
-    </ion-col>
     <ion-item>
-      <ion-button>Zerar</ion-button>
+      <ion-label>Time 1: </ion-label>
+      <ion-label slot="end">{{placarUm}}</ion-label>
     </ion-item>
-    
-  </ion-item>
-  <ion-label>Partidas</ion-label>
-  <ion-label>Time 1</ion-label>
-  <ion-label>0</ion-label>
-  <ion-label>Time 2</ion-label>
-  <ion-label>0</ion-label>
+
+    <ion-item>
+      <ion-label>Time 2: </ion-label>
+      <ion-label slot="end">{{placarDois}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-button color="danger" (click)="Clear()" class="clear-button">Zerar</ion-button>
+    </ion-item>
+
+  </ion-card>
+
+
+  <ion-grid>
+    <ion-row class="truco">
+      <ion-label>Apostando: {{valendo}}</ion-label>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="grid-valores">
+    <ion-row>
+        <ion-button color="danger" (click)="MultiplicarUm()">1</ion-button>
+        <ion-button color="danger" (click)="MultiplicarTres()">3</ion-button>
+        <ion-button color="danger" (click)="MultiplicarSeis()">6</ion-button>
+        <ion-button color="danger" (click)="MultiplicarNove()">9</ion-button>
+        <ion-button color="danger" (click)="MultiplicarDoze()">12</ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="grid-times" >
+    <ion-col>
+      <ion-row class="grid-row">
+        <ion-label>Time 1</ion-label>
+        <ion-button color="danger" (click)="BotaoSomaTime1()">+</ion-button>
+        <ion-label>{{placarUm}}</ion-label>
+        <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+      </ion-row>
+    </ion-col>
+
+    <ion-col>
+      <ion-row class="grid-row">
+        <ion-label>Time 2</ion-label>
+        <ion-button color="danger" (click)="BotaoSomaTime2()">+</ion-button>
+        <ion-label>{{placarDois}}</ion-label>
+        <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+
 </ion-content>
