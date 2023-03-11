@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
       Truco
     </ion-title>
@@ -7,60 +7,56 @@
 </ion-header>
   
   <ion-content [fullscreen]="true">
+  <div class="background"></div>
 
-  <ion-card class="grid-placar">
-    <ion-card-header> Placar</ion-card-header>
+  <div class="imagemAjuste">
+      <ion-card color="dark">
+          <ion-card-header> Placar</ion-card-header>
+          <ion-item color="dark">
+            <ion-label>Time 1: </ion-label>
+            <ion-label slot="end">{{placarUm}}</ion-label>
+          </ion-item>
+          <ion-item color="dark">
+            <ion-label>Time 2: </ion-label>
+            <ion-label slot="end">{{placarDois}}</ion-label>
+          </ion-item>
+          <ion-item color="dark">
+            <ion-button color="danger" (click)="Clear()" class="clear-button">Zerar</ion-button>
+          </ion-item>
+      </ion-card>
 
-    <ion-item>
-      <ion-label>Time 1: </ion-label>
-      <ion-label slot="end">{{placarUm}}</ion-label>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Time 2: </ion-label>
-      <ion-label slot="end">{{placarDois}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-button color="danger" (click)="Clear()" class="clear-button">Zerar</ion-button>
-    </ion-item>
-
-  </ion-card>
-
-
-  <ion-grid>
-    <ion-row class="truco">
-      <ion-label>Apostando: {{valendo}}</ion-label>
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid class="grid-valores">
-    <ion-row>
-        <ion-button color="danger" (click)="MultiplicarUm()">1</ion-button>
-        <ion-button color="danger" (click)="MultiplicarTres()">3</ion-button>
-        <ion-button color="danger" (click)="MultiplicarSeis()">6</ion-button>
-        <ion-button color="danger" (click)="MultiplicarNove()">9</ion-button>
-        <ion-button color="danger" (click)="MultiplicarDoze()">12</ion-button>
-    </ion-row>
-  </ion-grid>
-
-  <ion-grid class="grid-times" >
-    <ion-col>
-      <ion-row class="grid-row">
-        <ion-label>Time 1</ion-label>
-        <ion-button color="danger" (click)="BotaoSomaTime1()">+</ion-button>
-        <ion-label>{{placarUm}}</ion-label>
-        <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+    <ion-grid>
+      <ion-row class="flexCenter">
+        <ion-label>Apostando: {{valendo}}</ion-label>
       </ion-row>
-    </ion-col>
-
-    <ion-col>
-      <ion-row class="grid-row">
-        <ion-label>Time 2</ion-label>
-        <ion-button color="danger" (click)="BotaoSomaTime2()">+</ion-button>
-        <ion-label>{{placarDois}}</ion-label>
-        <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+    </ion-grid>
+    <ion-grid class="flexCenter">
+      <ion-row>
+          <ion-button color="danger" (click)="MultiplicarUm()">1</ion-button>
+          <ion-button color="danger" (click)="MultiplicarTres()">3</ion-button>
+          <ion-button color="danger" (click)="MultiplicarSeis()">6</ion-button>
+          <ion-button color="danger" (click)="MultiplicarNove()">9</ion-button>
+          <ion-button color="danger" (click)="MultiplicarDoze()">12</ion-button>
       </ion-row>
-    </ion-col>
-  </ion-grid>
+    </ion-grid>
+    <ion-grid class="grid-times" >
+      <ion-col>
+        <ion-row class="grid-row">
+          <ion-label>Time 1</ion-label>
+          <ion-button color="danger" (click)="BotaoSomaTime1()">+</ion-button>
+          <ion-label>{{placarUm}}</ion-label>
+          <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row class="grid-row">
+          <ion-label>Time 2</ion-label>
+          <ion-button color="danger" (click)="BotaoSomaTime2()">+</ion-button>
+          <ion-label>{{placarDois}}</ion-label>
+          <ion-button color="danger" (click)="BotaoSubtraiTime2()">-</ion-button>
+        </ion-row>
+      </ion-col>
+    </ion-grid>
+  </div>
 
 </ion-content>

@@ -10,6 +10,8 @@ export class Tab2Page {
   valendo = 1;
   placarUm = 0;
   placarDois = 0;
+  pontosTimeUm = 0;
+  pontosTimeDois = 0;
 
   
   constructor() {}
@@ -60,14 +62,6 @@ export class Tab2Page {
     if (this.placarDois <= 0) {
       this.placarDois = 0
     }
-  }
-  
-  PlacarTime1 () {
-
-  }
-
-  PlacarTime2 () {
-    
   }
 
   Clear () {
