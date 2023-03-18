@@ -28,7 +28,7 @@ export class Tab1Page {
 
   jogarMoeda(){
     this.moeda = 'assets/logo.png'
-    this.info='Girando...'
+    this.info= 'Girando...'
 
     this.state = (this.state === 'default') ? 'rotated' : 'default';
 
